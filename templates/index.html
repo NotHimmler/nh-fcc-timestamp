@@ -1,11 +1,13 @@
 <html>
-    <head><link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles.css')}}"></head>
+    <head>
+        <link rel='stylesheet' type='text/css' href="{{url_for('static', filename='styles/styles.css')}}"/>
+    </head>
     <body>
         <div class="container">
             <h1>nh-fcc-timestamp</h1>
             <p>This is a simple web api for converting date types.</p>
             <p>Pass in either a unix timestamp or a natural date string in the format 'MONTH DAY_NUM, YEAR" and get back a json object with both.</p>
-            <p>If it contains neither, it will return null.</p>
+            <p>If it contains neither, it will return a json object with null for both paramaters.</p>
         </div>
     </body>
 </html>
