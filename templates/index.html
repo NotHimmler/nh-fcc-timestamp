@@ -3,11 +3,26 @@
         <link rel='stylesheet' type='text/css' href="{{url_for('static', filename='styles/styles.css')}}"/>
     </head>
     <body>
-        <div class="container">
+        <div class="box">
             <h1>nh-fcc-timestamp</h1>
-            <p>This is a simple web api for converting date types.</p>
-            <p>Pass in either a unix timestamp or a natural date string in the format 'MONTH DAY_NUM, YEAR" and get back a json object with both.</p>
-            <p>If it contains neither, it will return a json object with null for both paramaters.</p>
+            <p>This is a simple web API for converting date types.</p>
+            <p>Pass in either a unix timestamp or a natural date string in the format <code>"MONTH DAY_NUM, YEAR"</code> and get back a JSON object with parameters representing both.</p>
+            <p>If it contains neither, it will return a JSON object with null for both paramaters.</p>
+            
+            <h3>Examples</h3>
+            <h4>URL</h4>
+            <div class='example'>
+                <code>http://nh-fcc-timestamp.herokuapp.com/February 29, 2016</code>
+                <br>
+                <code>http://nh-fcc-timestamp.herokuapp.com/1456704000</code>
+            </div>
+            <h4>Result</h4>
+            <div class='example'>
+                <code>{ "natural": "February 29, 2016", "unix": 1456704000 }</code>
+            </div>
+        </div>
+        <div class="footer">
+            Heinrich Malan, 2016 | <a href="http://eaae.com.au/heinrich.html">Portfolio</a>
         </div>
     </body>
 </html>
