@@ -22,9 +22,13 @@ def giveJSON(dateString):
 		return "Natural Date"
 	#Unix Timestamp
 	else:
-		timestamp = dateString
-		dateObj = date.fromtimestamp(float(dateString))
-		natural = naturalDateString(dateObj.year, dateObj.month, dateObj.day)
+		if int(dateString) < 0:
+			natural = None
+			timestamp = None
+		else:
+			timestamp = dateString
+			dateObj = date.fromtimestamp(float(dateString))
+			natural = naturalDateString(dateObj.year, dateObj.month, dateObj.day)
 	
 	object = {'unix' : timestamp,'natural' : natural,}
 		
