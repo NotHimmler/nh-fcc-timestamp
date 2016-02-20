@@ -4,6 +4,10 @@ from datetime import date
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 app = Flask(__name__)
 
+@app.route('/')
+def main():
+	return render_template('index.html')
+
 @app.route('/<string:dateString>')
 def giveJSON(dateString):
 	#Find out if string contains letters or digits only
