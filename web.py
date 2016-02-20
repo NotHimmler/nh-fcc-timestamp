@@ -1,5 +1,6 @@
 import os
 import re
+import math
 from datetime import date
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 app = Flask(__name__)
@@ -11,7 +12,7 @@ def main():
 @app.route('/<string:dateString>')
 def giveJSON(dateString):
 	#Find out if string contains letters or digits only
-	regex = '[a-zA-Z]'
+	regex = '[\D+]'
 	m = re.match(regex, dateString)
 	
 	natural = ""
@@ -22,7 +23,7 @@ def giveJSON(dateString):
 		return "Natural Date"
 	#Unix Timestamp
 	else:
-		if int(dateString) < 0:
+		if int(dateString) > math.pow(2,32):
 			natural = None
 			timestamp = None
 		else:
